@@ -8,9 +8,11 @@ pipeline {
             }
         }
         stage('Checkout git') {
-            echo 'pulling';
-            git branch: 'master';
-            url: 'https://github.com/iheboueslatiesprit/5TWIN-microservices.git'
+            steps {
+                echo 'pulling';
+                git branch: 'master';
+                url: 'https://github.com/iheboueslatiesprit/5TWIN-microservices.git'
+            }
         }
     }
 }
