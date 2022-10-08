@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World';
-                emailext body: 'Pipeline test', to: "iheb.oueslati@esprit.tn", subject: 'Test'
+                mail body: 'Pipeline', to: "iheb.oueslati@esprit.tn", subject: 'pipeline executed'
             }
         }
         stage('Checkout git') {
@@ -18,7 +18,7 @@ pipeline {
     }
         post {
             failure {
-                emailext body: 'Pipeline fail', to: "iheb.oueslati@esprit.tn", subject: 'Test'
+                mail body: 'Pipeline fail', to: "oueslatiiheb0@gmail.com", subject: 'Pipeline fail'
             }
         }
 }
