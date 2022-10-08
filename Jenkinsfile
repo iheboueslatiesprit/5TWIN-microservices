@@ -18,7 +18,7 @@ pipeline {
     }
         post {
             failure {
-                emailext body: 'Pipeline fail', to: "oueslatiiheb0@gmail.com", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+                emailext body: 'Pipeline fail', to: "oueslatiiheb0@gmail.com", subject: 'Test'
             }
         }
 }
