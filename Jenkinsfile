@@ -5,6 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World';
+                emailext body: 'Pipeline test', to: "oueslatiiheb0@gmail.com", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
             }
         }
         stage('Checkout git') {
@@ -15,4 +16,10 @@ pipeline {
             }
         }
     }
+        post {
+            failure {
+                emailext body: 'Pipeline fail', to: "oueslatiiheb0@gmail.com", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+            }
+        }
 }
+
