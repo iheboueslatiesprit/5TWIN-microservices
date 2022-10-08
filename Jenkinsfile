@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World';
-                emailext body: 'Pipeline test', to: "oueslatiiheb0@gmail.com", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+                emailext body: 'Pipeline test', to: "oueslatiiheb0@gmail.com", subject: 'Test'
             }
         }
         stage('Checkout git') {
