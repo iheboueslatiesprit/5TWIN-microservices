@@ -15,16 +15,11 @@ pipeline {
                 url: 'https://github.com/iheboueslatiesprit/5TWIN-microservices.git'
             }
         }
-        stage('Build') {
+        stage('build') {
             steps {
-                 sh 'mvn clean install'
+                sh 'mvn clean install'
                 }
-            }
-             post {
-             success {
-                 junit 'target/surefire-reports/**/*.xml'
-                            }
-                        }
+                }
     }
         post {
             failure {
